@@ -1,11 +1,11 @@
-<script>
+<script lang="ts">
   import MdVerifiedUser from 'svelte-icons/md/MdVerifiedUser.svelte';
   import MdErrorOutline from 'svelte-icons/md/MdErrorOutline.svelte';
   import MdWarning from 'svelte-icons/md/MdWarning.svelte';
   import MdBatteryChargingFull from 'svelte-icons/md/MdBatteryChargingFull.svelte';
 
-  export let password;
-  export let background;
+  export let password: string;
+  export let background: string;
 </script>
 
 <p class="password">{password}</p>

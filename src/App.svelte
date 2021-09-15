@@ -5,6 +5,7 @@
   import Checkbox from './components/Checkboxes.svelte';
   import Button from './components/Button.svelte';
   import Slider from './components/Slider.svelte';
+  import Password from './components/Password.svelte';
 
   let range: number = 12;
   let isLetter: boolean = true;
@@ -23,8 +24,7 @@
 <main class={backgroundColor}>
   <div class="container">
     <div>
-      <p>{password}</p>
-      <p>password strength</p>
+      <Password {password} background={backgroundColor} />
       <Slider {range} {handleChange} />
       <p>Length ({range})</p>
     </div>

@@ -11,7 +11,7 @@
   let isNumber: boolean = true;
   let isSymbol: boolean = false;
 
-  function handleChange(e: Event) {
+  function handleChange(e: Event): void {
     const value = (<HTMLInputElement>e.target).value;
     range = parseInt(value);
   }
@@ -21,37 +21,41 @@
 </script>
 
 <main class={backgroundColor}>
-  <div>
-    <p>{password}</p>
-    <p>password strength</p>
-    <Slider {range} {handleChange} />
-    <p>Length ({range})</p>
-    <p>{backgroundColor}</p>
-  </div>
+  <div class="container">
+    <div>
+      <p>{password}</p>
+      <p>password strength</p>
+      <Slider {range} {handleChange} />
+      <p>Length ({range})</p>
+    </div>
 
-  <div>
-    <Checkbox
-      isType={isLetter}
-      typeName="letter"
-      action={() => (isLetter = !isLetter)}
-    />
-    <Checkbox
-      isType={isNumber}
-      typeName="number"
-      action={() => (isNumber = !isNumber)}
-    />
-    <Checkbox
-      isType={isSymbol}
-      typeName="symbol"
-      action={() => (isSymbol = !isSymbol)}
-    />
+    <div>
+      <Checkbox
+        isType={isLetter}
+        typeName="letter"
+        action={() => (isLetter = !isLetter)}
+      />
+      <Checkbox
+        isType={isNumber}
+        typeName="number"
+        action={() => (isNumber = !isNumber)}
+      />
+      <Checkbox
+        isType={isSymbol}
+        typeName="symbol"
+        action={() => (isSymbol = !isSymbol)}
+      />
+    </div>
+    <Button copyText={password} />
   </div>
-  <Button copyText={password} />
 </main>
 
 <style lang="scss">
   main {
-    background: var(--black);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &.mega {
       background: var(--mega);
@@ -65,6 +69,17 @@
     &.bad {
       background: var(--bad);
     }
+  }
+
+  .container {
+    position: relative;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+    padding: 2.5rem 5rem;
   }
 
   p {

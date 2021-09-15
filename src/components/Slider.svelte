@@ -25,5 +25,21 @@
     border-radius: 8px;
     height: 8px;
     cursor: pointer;
+
+    &[type='range'] {
+      &::-webkit-slider-thumb {
+        appearance: none;
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        background: var(--white);
+        border: none;
+        cursor: pointer;
+      }
+    }
+
+    &[type='range' i] {
+      color: var(--white);
+    }
   }
 </style>

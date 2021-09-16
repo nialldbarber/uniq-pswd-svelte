@@ -12,7 +12,7 @@
   max="40"
   step="1"
   value={range}
-  on:change={handleChange}
+  on:input={handleChange}
   style="background: linear-gradient(to right, rgb(255, 255, 255) {range *
     2.5}%, rgba(255, 255, 255, 0.4) 0%)"
 />

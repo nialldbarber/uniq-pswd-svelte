@@ -29,7 +29,7 @@
       <p>Length ({range})</p>
     </div>
 
-    <div>
+    <div class="checkbox-container">
       <Checkbox
         isType={isLetter}
         typeName="letter"
@@ -85,5 +85,9 @@
   p {
     margin: 0;
     color: var(--white);
+  }
+
+  .checkbox-container {
+    display: flex;
   }
 </style>

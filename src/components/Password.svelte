@@ -6,22 +6,32 @@
 
   export let password: string;
   export let background: string;
+
+  const PASSWORD_STRENGTH = {
+    mega: 'Mega',
+    good: 'Strong',
+    medium: 'Fairly strong',
+    bad: 'Weak',
+  };
 </script>
 
 <p class="password">{password}</p>
-<div class="icons">
-  {#if background === 'bad'}
-    <MdWarning />
-  {:else if background === 'medium'}
-    <MdErrorOutline />
-  {:else if background === 'good'}
-    <MdVerifiedUser />
-  {:else if background === 'mega'}
-    <MdBatteryChargingFull />
-  {/if}
+<div class="icon-container">
+  <div class="icons">
+    {#if background === 'bad'}
+      <MdWarning />
+    {:else if background === 'medium'}
+      <MdErrorOutline />
+    {:else if background === 'good'}
+      <MdVerifiedUser />
+    {:else if background === 'mega'}
+      <MdBatteryChargingFull />
+    {/if}
+  </div>
+  <span>{PASSWORD_STRENGTH[background]} password</span>
 </div>
 
-<style>
+<style lang="scss">
   .password {
     margin: 0;
     color: var(--white);
@@ -30,6 +40,18 @@
     line-height: 1.3;
     margin-bottom: 0.5rem;
     word-break: break-word;
+  }
+
+  .icon-container {
+    display: flex;
+    align-items: center;
+
+    span {
+      display: block;
+      padding-left: 0.5rem;
+      color: var(--white);
+      font-size: 1.2rem;
+    }
   }
 
   .icons {

@@ -22,6 +22,8 @@
     align-self: center;
     appearance: none;
     width: 100%;
+    height: 2px;
+    padding: 4px;
     border-radius: 8px;
     border: none;
     height: 8px;

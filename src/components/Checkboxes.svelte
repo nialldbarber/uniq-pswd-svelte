@@ -1,6 +1,7 @@
 <script lang="ts">
   export let isType: boolean;
   export let typeName: string;
+  export let title: string;
   export let action: () => void;
 </script>
 
@@ -12,15 +13,12 @@
     checked={isType}
     on:click={action}
   />
-  <label for={typeName}>{typeName}</label>
+  <label for={typeName}>{title}</label>
 </div>
 
 <style lang="scss">
   div {
-    margin: 0;
-    color: var(--white);
-    font-size: 1.2rem;
-    margin-right: 0.7rem;
+    margin: 0 0.7rem 0 0;
     cursor: pointer;
   }
 

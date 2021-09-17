@@ -33,16 +33,19 @@
       <Checkbox
         isType={isLetter}
         typeName="letter"
+        title="Letters (e.g. Aa)"
         action={() => (isLetter = !isLetter)}
       />
       <Checkbox
         isType={isNumber}
         typeName="number"
+        title="Digits (e.g. 345)⁭"
         action={() => (isNumber = !isNumber)}
       />
       <Checkbox
         isType={isSymbol}
         typeName="symbol"
+        title="Symbols (@&$!#?)"
         action={() => (isSymbol = !isSymbol)}
       />
     </div>

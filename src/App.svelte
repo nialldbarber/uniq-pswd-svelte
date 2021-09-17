@@ -2,6 +2,7 @@
   import {generatePassword} from './utils/generatePassword';
   import {handleBackgroundChange} from './utils/background';
 
+  import Container from './components/Container.svelte';
   import Checkbox from './components/Checkboxes.svelte';
   import Button from './components/Button.svelte';
   import Slider from './components/Slider.svelte';
@@ -22,7 +23,7 @@
 </script>
 
 <main class={backgroundColor}>
-  <div class="container">
+  <Container>
     <div>
       <Password {password} background={backgroundColor} />
       <Slider {range} {handleChange} />
@@ -49,7 +50,7 @@
       />
     </div>
     <Button copyText={password} />
-  </div>
+  </Container>
 </main>
 
 <style lang="scss">
@@ -71,17 +72,6 @@
     &.bad {
       background: var(--bad);
     }
-  }
-
-  .container {
-    position: relative;
-    display: flex;
-    align-self: center;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: 300px;
-    padding: 2.5rem 5rem;
   }
 
   p {

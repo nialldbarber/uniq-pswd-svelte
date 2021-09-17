@@ -28,7 +28,6 @@
       <Slider {range} {handleChange} />
       <p>Length ({range})</p>
     </div>
-
     <div class="checkbox-container">
       <Checkbox
         isType={isLetter}

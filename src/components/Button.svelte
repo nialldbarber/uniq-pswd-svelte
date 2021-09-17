@@ -4,13 +4,43 @@
   export let copyText: string;
 </script>
 
-<button on:click={() => copyToClipboard(copyText)}>Copy password</button>
+<div>
+  <span>Copied</span>
+  <button on:click={() => copyToClipboard(copyText)}>Copy password</button>
+</div>
 
 <style lang="scss">
-  button {
+  div {
     position: absolute;
     top: 2.5rem;
     right: 5rem;
+  }
+
+  span {
+    position: absolute;
+    top: -2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--black);
+    color: var(--white);
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+
+    &:after {
+      content: '';
+      position: 'absolute';
+      display: block;
+      left: 50%;
+      top: 30px;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid var(--white);
+      transform: translateX(-50%);
+    }
+  }
+
+  button {
     width: 180px;
     background: var(--green);
     color: var(--white);

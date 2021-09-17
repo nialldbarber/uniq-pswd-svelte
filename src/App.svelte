@@ -89,5 +89,6 @@
 
   .checkbox-container {
     display: flex;
+    margin-top: 2rem;
   }
 </style>

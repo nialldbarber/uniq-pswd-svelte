@@ -15,7 +15,7 @@
   };
 </script>
 
-<p class="password">{password}</p>
+<p>{password}</p>
 <div class="icon-container">
   <div class="icons">
     {#if background === 'bad'}
@@ -32,7 +32,7 @@
 </div>
 
 <style lang="scss">
-  .password {
+  p {
     margin: 0;
     color: var(--white);
     font-size: 3rem;

@@ -19,7 +19,6 @@
 <style lang="scss">
   div {
     margin: 0 0.7rem 0 0;
-    cursor: pointer;
   }
 
   label {
@@ -28,5 +27,10 @@
     color: var(--white);
     font-size: 1.2rem;
     user-select: none;
+    cursor: pointer;
+  }
+
+  input {
+    cursor: pointer;
   }
 </style>

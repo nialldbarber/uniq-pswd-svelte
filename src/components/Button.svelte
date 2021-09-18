@@ -2,11 +2,22 @@
   import {copyToClipboard} from '../utils/copyToClipboard';
 
   export let copyText: string;
+  let isVisisble: boolean = false;
+
+  function handleClick(): void {
+    copyToClipboard(copyText);
+    isVisisble = true;
+    setTimeout(() => {
+      isVisisble = false;
+    }, 1000);
+  }
 </script>
 
 <div>
-  <span>Copied</span>
-  <button on:click={() => copyToClipboard(copyText)}>Copy password</button>
+  {#if isVisisble}
+    <span>Copied</span>
+  {/if}
+  <button on:click={handleClick}>Copy password</button>
 </div>
 
 <style lang="scss">
@@ -29,13 +40,13 @@
 
     &:after {
       content: '';
-      position: 'absolute';
+      position: absolute;
       display: block;
       left: 50%;
       top: 30px;
       border-left: 5px solid transparent;
       border-right: 5px solid transparent;
-      border-top: 5px solid var(--white);
+      border-top: 5px solid var(--black);
       transform: translateX(-50%);
     }
   }
